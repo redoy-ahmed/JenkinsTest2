@@ -16,6 +16,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+
+        release {
+            keyPassword project["keyPass"]
+            storeFile file(project["storeFilePath"])
+            storePassword project["storePass"]
+        }
+    }
 }
 
 dependencies {
